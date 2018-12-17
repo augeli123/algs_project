@@ -1,0 +1,5 @@
+1、如果该值在初始化后不想被改变，则使用final
+2、私有的嵌套类，控制访问范围
+3、可变参数列表
+static void printArray（Object [] args）{for(Objerct obj:args) ......}
+4、枚举
