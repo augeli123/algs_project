@@ -1,0 +1,17 @@
+没有名字的对象
+应用场景：
+A：调用方法，仅仅只调用一次的时候
+匿名对象调用后就是垃圾，会被垃圾回收器回收
+B：匿名对象可以作为实际参数传递
+class Student{
+	public void show(){
+	System.out.println("leaning");
+}
+}
+class Demo{
+public static void main(String []args)
+ {
+//匿名对象
+new Student().show();
+ }
+}

@@ -1,4 +1,4 @@
-
+一维数组：
 int [] a;
 int a[];
 对数组进行初始化：
@@ -34,3 +34,11 @@ Java中的内存分配
       BullPointerException:空指针异常，数组已经不再指向对内存了。
 
 常见Exception 结尾的问题总结
+
+二维数组
+定义方式一：int [][]arr=new int [2][3];   列数固定
+定义方式二：int [][] arr=new int[3][];   列数动态的给
+	arr[0]=new int [3];
+	arr[1]=new int  [2];
+	arr[2]=new int [1];
+定义方式三：数据类型[][]变量名=new 数据类型[][]{{元素。。。}，{0，0，0}，{3，3}}；
