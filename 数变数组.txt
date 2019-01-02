@@ -1,0 +1,6 @@
+while(number>0)
+{
+arr[index]=number%10;
+index++;
+number/=10;
+}

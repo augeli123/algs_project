@@ -1,0 +1,29 @@
+接口的特点
+	A:使用关键字 interface 接口名{}
+	B:类实现接口 class 类名 implements  接口名{}
+	C：接口不能够实例化 按照多态的方式进行实例化
+	具体类多态（不用）
+	抽象类多态（常用）
+	接口多态（最常用）
+	D:接口的子类
+		要么是抽象的，
+		要么覆盖接口所有抽象的方法（推荐方案）
+		接口名+Impl
+
+interface AnimalTrain{
+	public abstract void jump();
+}
+abstract class Dog implements AnimalTrain{
+}
+class Cat implements AnimaTrain{
+	public void jump{
+System.out.println("猫可以跳高了");
+}
+	}
+
+
+接口的成员特点：
+	成员变量：接口中的变量默认是常量,并且是静态的
+		public static final 建议自己手动给出，不能被修改
+	构造方法：接口没有构造方法，所有的类都默认继承了Object类
+	成员方法：接口的方法不能够带主体,只能是抽象方法，访问属性默认是public abstract的
