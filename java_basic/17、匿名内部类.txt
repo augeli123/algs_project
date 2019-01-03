@@ -1,0 +1,46 @@
+内部类的简化写法
+	前提：存在一个类或者一个接口
+	格式 
+		new 类名或接口名(){
+		重写方法
+		}
+
+	本质是一个对象，一个继承了该类或者实现了该接口的子类匿名对象。
+interface Inter{
+	public abstract void show();}
+
+class Outer{
+	public void method(){
+	new Inter(){
+		public void show(){
+			System.out.println("show");
+		}
+		}.show();//对象调用方法
+
+	}
+}
+class InnerClassDemo6{
+	public static void main(String[] args)
+{
+	Outer ou=new Outer();
+	ou.method();
+	}
+}
+
+//不使用匿名,静态方法，工具类
+class Outer{
+	public static void mthod(){
+	return new Inter(){
+	public void show(){
+	System.out.println("show");
+	}
+	}
+}
+}
+class OuterDemo{
+	public static void main(String[] args)
+
+{
+	Outer.method.show();
+}
+}

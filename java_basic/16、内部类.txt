@@ -1,0 +1,41 @@
+内部类：
+	把类放在其他类的内部，
+class Outer{
+	int num=10;
+	class Inner{
+	public void show(){
+	System.out.println(num);}
+	}
+}
+内部类的访问特点：
+	A、内部类可以直接访问外部类的成员包括私有
+	B、外部类要想访问内部类的成员，必须创建对象
+
+内部类：
+	成员位置定义的类。成员内部类		
+	在局部位置定义的类，被称为局部内部类
+	访问内部类的成员：
+	外部类名.内部类名 对象名=外部类对象.内部类对象
+public 
+	Outer.Inner oi =new Outer().new Inner();
+	oi.show();
+private
+		在外部类中使用一个函数去校验，并初始化再调用内部类 
+class Outer{	
+	private class Inner{
+	public void show(){
+	System.out.println(num);}
+	}	
+	method(){
+		if(满足条件)
+		{
+			Inner in=new Inner();
+			in.show();
+		}
+		}
+}
+	Outer ou=new Outer(); ou.method();
+static 
+	静态内部类访问的外部类数据必须用静态修饰	
+	外部类名.内部类名 对象名=new 外部类名.内部类名
+	Outer.Inner oi=new Outer.Inner();

@@ -1,0 +1,1 @@
+sd.getStudent().study(); 每次调用方法后返回的是一个对象。

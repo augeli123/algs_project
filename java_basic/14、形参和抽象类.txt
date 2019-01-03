@@ -1,0 +1,23 @@
+形式参数：
+	基本类型
+	引用类型
+		类：需要的是该类的对象
+		抽象类：需要该抽象类的子类对象，重写的方法中不需要abstract关键字
+		接口，具体类实现接口，实现类对象
+
+返回值：
+	基本类型
+	引用类型：
+		类：返回该类的对象
+		抽象类：需要抽象类的子类重写抽象方法，返回抽象类的子类对象 
+		abstract Person{...}
+		public Person getPerson()
+		{
+			return new Student();
+			}
+		接口：返回接口的一个具体实现类对象
+		interface Love{...}
+		public Love getLove()
+		{
+			return new Teacher();
+		}
