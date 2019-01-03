@@ -1,0 +1,9 @@
+    //1、构造
+    StringBuffer sb=new StringBuffer(s1);
+    //2、append方法
+    StringBuffer sb1=new StringBuffer();
+    sb1.append(s1);
+    //1、构造
+    String str=new String(sb);
+    //2、toString
+    String str2=sb.toString();

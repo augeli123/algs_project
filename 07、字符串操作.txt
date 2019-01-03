@@ -1,0 +1,33 @@
+倒序
+ 倒着遍历
+	a:length()和charAt()结合	
+	b:把字符串转化为字符数组
+ 把每个字符进行拼接
+
+String myReverse(String s)
+{
+	String result="";
+	char[] chs=s.toCharArray();
+	for(int i=chs.length-1;i>=0;i--)
+{
+	result+=chs[i];
+}
+	return result;
+}
+
+查找子串出现的次数
+  定义一个统计变量初始化为0
+  查找第一个子串，截取将index向后移动字串长度+查到的位置
+   indexOf(String s)  indexOf(String s ,from index);
+  返回-1没有查到
+
+    public static void getCount(String s,String minString)
+    {
+        int count=0;
+        int index=0;
+        while((index=s.indexOf(minString,index+minString.length()))!=-1){
+             s=s.substring(index+minString.length());
+                count++;
+            }
+        System.out.println(count);
+    }

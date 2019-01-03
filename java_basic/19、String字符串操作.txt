@@ -1,0 +1,54 @@
+实际开发中，字符串是最常见的
+字符串：由许多个字符组成的遗传数据。也可以看成是一个字符数组。
+A:字符串字面值“abc”可以看成一个字符串对象
+B:字符串是常量，一旦被赋值，不能够被修改
+
+构造方法：
+	public String()空构造
+	public String(byte[] bytes):把字节转化为字符串
+	public String(byte[] bytes,int index,int length):把字节数组的一部分转化为字符串
+	public String(char[] values)把宗福数组转化为字符串
+	public String(Char[] value,int index,int count):把字符数组的一部分转成字符串
+	public String(String  original)把字符串常量转成字符串；
+
+字符串的方法：
+	public int length():返回字符串的长度
+	
+字符串的功能：
+	判断功能：
+	boolean equals(Object obj)
+	boolean equalsIgnoreCase(String str)
+	boolean contains(String str)
+	boolean startsWith(String str)
+	boolean endsWith(String str)
+	boolean isEmpty()   "" 为空，String s=null,为空引用
+	获取功能
+	int length()
+	char charAt(int index)
+	int indexOf(int ch)
+	int indexOf(String str)
+	int indexOf(int ch,int fromIndex) //从指定位置后第一次出现的索引
+	int indexOf(String str,int fromIndex)
+	String substring(int start) //默认到末尾且起始位置包含
+	String subString(int start,int end)//包括start 但是不包括end索引
+	转换功能
+	byte[] getBytes() ：把字符串转化为字节数组
+	char[] toCharArray():把字符串转化为字符数组
+	static String valueOf(char[]chs) 把字符数组转化为字符串
+	static String valueOf(int i):把int转化为字符串（把任意类型转化为字符串）
+	String toLowerCase()
+	String toUpperCase()
+	String concat(String str)
+
+	String其他功能：
+	替换功能
+	String replace(char old,char new);
+	String replace(String old,String new);
+	去除两端空格
+	String trim()
+	按字典顺序比较两个字符串
+	int compareTo(String str)
+	int compareToIgnoreCase(String str)
+	
+	
+	

@@ -1,0 +1,46 @@
+String 的字符串拼接耗时并且浪费空间
+StringBuffer用于解决问题，
+ * 线程安全
+ * 安全--同步--数据是安全的
+ * 不安全--不同步--快速
+安全：医院的网站，银行网站
+效率：新闻网站，论坛
+
+StringBuffer是一个线程安全的可变字符序列。
+和String的区别：前者可变，后者不可变，前者做字符转拼接不会浪费太多的资源。
+	构造方法：
+	public StringBuffer()
+	public StringBuffer(int capaity)
+	public StringBuffer(String str)
+
+	方法：
+	public int capacity():返回当前容量，理论值
+	public int length():返回长度（字符数），实际值
+
+	功能：
+	添加：
+	public StringBuffer append(String str)：可以把任意类型添加到字符串缓冲区，返回本身
+	public StringBuffer insert(int offset,String str),把任意的位置插入到字符串里面，并返回字符串本身
+	删除功能
+	public StringBuffer deleteCharAt(int index):
+	public StringBuffer delete(int start,int end); 包左不包右
+	sb.delete(0,sb.length);清空
+	替换功能：
+	public StringBuffer replace(int start,int end,String str);
+	反转功能：
+	public StringBuffer reverse()
+	截取功能：
+	public String subString(int start)  注意此处的返回值是String
+	public String subString(int start,int end)
+
+
+
+
+
+
+
+
+
+
+	
+	

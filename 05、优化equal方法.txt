@@ -1,0 +1,11 @@
+public boolean equals(Object obj)
+{
+	//为了提高效率
+	if(this==obj)
+	{
+		return true; //同一个对象，比用向下转型
+	}
+	Student s=(Student)obj;
+	return this.name.equals(s.name)&&this.age==s.age;  
+
+} //主要是优化编程的思想
