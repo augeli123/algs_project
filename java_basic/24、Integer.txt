@@ -1,0 +1,4 @@
+Integer.toBinaryString(int i) 转化为二进制
+Integer.toHextString(int i)  转化为十六进制
+Integer.MAX_VALUE。
+对基本类型进行更多的操作，更方便的操作。

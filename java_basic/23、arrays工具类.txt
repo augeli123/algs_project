@@ -1,0 +1,4 @@
+Arrays工具类：封装了对数组进行操作
+	sort()  对数组进行排序
+	toString(int[] a) 把数组转成字符串
+	binarySearch(int[] a,int key) //二分查找

@@ -1,0 +1,49 @@
+File是文件或目录的抽象表示形式，未必是真实存在的
+构造方法：
+	File(String pathname)
+	File(String parent,String child);
+	File(File parent,String child)
+功能：
+创建功能：需要区分是创建文件还是文件夹
+	createNewFile()  //创建文件 touch aaa.txt 
+		注意，要想在某个目录下创建内容，首先这个目录要存在
+	mkdir() //创建单层文件夹，如果存在，就不创建 mkdir /test
+	mkdirs() //创建文件夹 mkdir -p catkin_ws/src
+删除功能：
+	public boolean delete
+	如果删的是目录，必须要先删除目录中的文件
+	java中的删除不走回收站
+重命名功能：
+	public boolean renameTo(File dest)
+	如果路径名相同，就是改名。如果不相同，就是剪切加改名
+判断功能：
+	public boolean isDirectory():判断是否是目录
+	public boolean isFile():判断是否是文件
+	public boolean exists():
+	public boolean canRead()
+	public boolean canWrite()
+	public boolean isHidden()
+获取功能：
+	public String getAbsloutePath()
+	public String getPath()
+	public String getName()
+	public long length():获取长度，字节数
+	public long lastModified()：获取最近一次修改时间，是毫秒值
+	Date d=new Date(f.lastModified);
+	SimpleDateFormat sdf=new SimpleDateFormate("yyyy-MM-dd");
+	sdf.format(d);
+高级获取
+	public String[] list() 获取指定目录下的所有文件或文件夹的名称数组
+	public File[] listFiles() 获取指定目录下的所有文件或文件夹的File数组
+	接口	FilenameFilter
+	String[] strArray=f1.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith("jpg")&&new File(dir,name).isFile();
+                //判断逻辑
+            }
+        });
+批量修改文件名称：
+	File newFile=new File(newName);
+	f.renameTo(newFile);
+	

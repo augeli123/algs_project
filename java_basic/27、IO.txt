@@ -1,0 +1,116 @@
+递归打印文件夹及其子文件
+	isDirectory(),再遍历listFiles
+  	报空指针异常 原因增强for循环的内容不能为空，要加一个判断
+ private static void tree(File src){
+    File[] fileArray=src.listFiles();
+    if(fileArray==null)return ;
+    for(File f:fileArray)
+    {
+        if(f.isDirectory())
+        {
+            tree(f);
+        }else{
+            if(f.getName().endsWith("java"))
+                System.out.println(f.getName());
+        }
+    }
+
+
+
+IO流主要处理设备间文件传输问题
+	分类：
+		输入流
+		输出流
+	数据类型：
+		字节流 InputStream OutputStrean
+		字符流 Reader Writer
+	
+	FileOutputStream 构造方法：
+		FIleOutputStram(File file)
+		FileOutputStream(String name)
+		创建字节输出流对象：
+			调用系统功能去创建文件
+			创建fos对象
+			将该对象指向文件
+		字节输出流操作步骤：
+			A:构造方法创建对象
+			B:write()方法
+			C:close()释放资源
+	public void write(byte[] b,
+                  int off,
+                  int len)
+           throws IOException
+	实现数据换行：
+		不同的系统针对不同的换行符号的识别是不一样
+		Windows \r\n
+		linux \n
+		Mac \r
+		高级记事本可以识别任意的换行符号
+	实现数据的追加写入：
+		FileOutputStream(File file, boolean append) 
+		append - 如果为 true，则将字节写入文件末尾处，而不是写入文件开始处 
+
+	FileInputStream
+		read()   读取到末尾，返回-1；  
+		read(byte [] b)   读到最后，返回-1  
+
+	byte [] bys=new byte[5];
+        int len=0 ;
+        while((len=fis.read(bys))！=-1)
+        {
+            System.out.print(new String(bys,0,len));//千万要带上len的使用
+        }
+
+	字节流复制数据：
+	byte [] bys=new byte[1024];
+        int len=0;
+        while((len=fis.read(bys))!=-1)
+        {
+            fos.write(bys,0,len);
+        }
+
+计算机中中文的存储是两个字节，第一个字节负数，第二个字节可能是正的，不影响
+
+	字节缓冲流
+	BufferedOutputStream 
+	BufferedInputStream
+	传递一个OutputStream对象，字节缓冲区流仅仅提供缓冲功能，为高效设计
+	BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream("hello.txt"));
+        bos.write("hello".getBytes());
+        bos.close();
+
+	
+        BufferedInputStream bis=new BufferedInputStream(
+                new FileInputStream("hello.txt"));
+        byte[] bys=new byte[1024];
+        int len =0;
+        while((len=bis.read(bys))!=-1)
+        {
+            System.out.print(new String(bys,0,len));
+        }	
+
+
+字符流=字节流+编码表
+	编码表：
+		ASCII表：
+		ISO-8859-1:拉丁码表 8位表示一个数据
+		gb2313:简体中文
+		gbk:
+		gb18030:
+		Unicode 国际标准码
+		utf-8最多使用三个字节表示一个字符。能一个就一个
+	字符串中的编码问题：
+		String(byte[],String charsetName) 解码
+		byte[] getBytes(String charsetName) 编码
+
+OutputStreamWriter
+	OutputStreamWriter(OutputStream out)
+	OutputStreamWriter(OutputStream out,String charset)
+	
+	osw.flush();  //刷新缓冲区，不关闭流
+	osw.close(); // 先刷新，再关闭流，关闭后，流对象不可以再使用
+
+转化流的简化写法
+	FileWriter:
+	FileWriter fw=new FileWriter("a.txt");
+	FileReader:

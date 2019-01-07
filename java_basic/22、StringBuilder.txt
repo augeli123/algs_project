@@ -1,0 +1,12 @@
+单线程内使用，替换StringBuffer,效率高，
+多线程内不安全
+
+	区别：
+	概念上讲String是内容不可变的，StringBuffer,StringBuilder内容可变
+StringBuffer是同步的，数据安全，效率低，StringBuilder不同步，效率高
+	StringBuffer和数组的区别：
+	数组只能放同一类型
+	二者都可以看成是一个容器，装其他数据。StringBuffer最终都是字符串数据
+形参：
+基本类型 String是一种特殊的引用类型，看成常量值
+引用类型 
